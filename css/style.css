@@ -134,6 +134,9 @@ button { -webkit-tap-highlight-color: transparent; }
   align-items: center;
   gap: 18px;
   padding: 14px 24px;
+  padding-top: calc(14px + env(safe-area-inset-top));
+  padding-left: calc(24px + env(safe-area-inset-left));
+  padding-right: calc(24px + env(safe-area-inset-right));
   background: linear-gradient(180deg, #3a2117, #2a1710);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
   position: sticky;
@@ -198,6 +201,9 @@ button { -webkit-tap-highlight-color: transparent; }
   justify-content: center;
   gap: 16px;
   padding: 28px 16px 44px;
+  padding-bottom: calc(44px + env(safe-area-inset-bottom));
+  padding-left: calc(16px + env(safe-area-inset-left));
+  padding-right: calc(16px + env(safe-area-inset-right));
   background: radial-gradient(ellipse at 50% -10%, var(--wood-1), var(--wood-2) 75%);
 }
 
@@ -623,7 +629,7 @@ em { font-style: italic; font-weight: 400; opacity: 0.7; }
 /* ================= TOAST ================= */
 
 .toast {
-  position: fixed; left: 50%; bottom: 26px; z-index: 80;
+  position: fixed; left: 50%; bottom: calc(26px + env(safe-area-inset-bottom)); z-index: 80;
   transform: translateX(-50%) translateY(16px);
   background: #2a1710; color: #f3e6c8;
   padding: 11px 24px; border-radius: 24px;
@@ -652,7 +658,13 @@ em { font-style: italic; font-weight: 400; opacity: 0.7; }
    qui rendiamo il pulsante "+" un pulsante rotondo ben visibile in alto a
    destra, e la ricerca scende su una riga propria sotto l'intestazione. */
 @media (max-width: 640px) {
-  .topbar { padding: 12px 14px 14px; gap: 8px 12px; }
+  .topbar {
+    padding: 12px 14px 14px;
+    padding-top: calc(12px + env(safe-area-inset-top));
+    padding-left: calc(14px + env(safe-area-inset-left));
+    padding-right: calc(14px + env(safe-area-inset-right));
+    gap: 8px 12px;
+  }
   .brand-title { font-size: 0.98rem; }
   .brand-logo { width: 34px; height: 34px; }
 
